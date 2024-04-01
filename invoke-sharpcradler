@@ -21,7 +21,17 @@ Param
 	[string]
         $argument4,
 	[string]
-        $argument5
+        $argument5,
+	[string]
+        $argument6,
+	[string]
+        $argument7,
+	[string]
+        $argument8,
+	[string]
+        $argument9,
+	[string]
+        $argument10,
 )
 Invoke-BlockETW2
 
@@ -93,7 +103,27 @@ namespace SharpCradler
 "@
 
 Add-Type -TypeDefinition $cradle -Language CSharp
-if ($argument1 -and $argument2 -and $argument3 -and $argument4 -and $argument5)
+if ($argument1 -and $argument2 -and $argument3 -and $argument4 -and $argument5 -and $argument6 -and $argument7 -and $argument8 -and $argument9 -and $argument10)
+{
+	[SharpCradler.Program]::Main("$uri", "$argument1", "$argument2", "$argument3", "$argument4", "$argument5", "$argument6", "$argument7", "$argument8", "$argument9", "$argument10")
+}
+elseif ($argument1 -and $argument2 -and $argument3 -and $argument4 -and $argument5 -and $argument6 -and $argument7 -and $argument8 -and $argument9)
+{
+	[SharpCradler.Program]::Main("$uri", "$argument1", "$argument2", "$argument3", "$argument4", "$argument5", "$argument6", "$argument7", "$argument8", "$argument9")
+}
+if ($argument1 -and $argument2 -and $argument3 -and $argument4 -and $argument5 -and $argument6 -and $argument7 -and $argument8)
+{
+	[SharpCradler.Program]::Main("$uri", "$argument1", "$argument2", "$argument3", "$argument4", "$argument5", "$argument6", "$argument7", "$argument8")
+}
+if ($argument1 -and $argument2 -and $argument3 -and $argument4 -and $argument5 -and $argument6 -and $argument7)
+{
+	[SharpCradler.Program]::Main("$uri", "$argument1", "$argument2", "$argument3", "$argument4", "$argument5", "$argument6", "$argument7")
+}
+if ($argument1 -and $argument2 -and $argument3 -and $argument4 -and $argument5 -and $argument6)
+{
+	[SharpCradler.Program]::Main("$uri", "$argument1", "$argument2", "$argument3", "$argument4", "$argument5", "$argument6")
+}
+elseif ($argument1 -and $argument2 -and $argument3 -and $argument4 -and $argument5)
 {
 	[SharpCradler.Program]::Main("$uri", "$argument1", "$argument2", "$argument3", "$argument4", "$argument5")
 }
